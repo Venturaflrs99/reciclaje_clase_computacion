@@ -9,10 +9,13 @@ st.set_page_config(page_title="Recicjale Computacion en la nube", layout="center
 st.title("Modelo predictivo Reciclaje clase de IA-UTH - 2026 - Josue Ventura")
 st.write("Suba una imagen para clasificar con el modelo MobileNetV2 pre entrenado")
 
-IMG_SIZE=(224,224)
-MODEL_DIR=Path("modelo_reciclaje_mobilenet")
-CLASS_PATH=MODEL_DIR/"class_names.json"
-MODEL_PATHS=[MODEL_DIR/"waste_mobilenet.keras", MODEL_DIR/"waste_mobilenet.h5"]
+IMG_SIZE = (224, 224)
+
+MODEL_DIR = Path(__file__).resolve().parent / "modelo_reciclaje_mobilenet"
+
+CLASSES_PATH = MODEL_DIR / "class_names.json"
+MODEL_PATH_H5 = MODEL_DIR / "waste_mobilenet.h5"
+MODEL_PATH_KERAS = MODEL_DIR / "waste_mobilenet.keras"
 
 LABELS_ES= {
   "cardboard": "Cartón",
