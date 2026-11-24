@@ -1,38 +1,18 @@
 import json
 from pathlib import Path
-
 import numpy as np
 import streamlit as st
 import tensorflow as tf
-from PIL import Image, UnidentifiedImageError
+from PIL import Image
 
+st.set_page_config(page_title="Recicjale Computacion en la nube", layout="centered")
+st.title("Modelo predictivo Reciclaje clase de IA-UTH - 2026 - Josue Ventura")
+st.write("Suba una imagen para clasificar con el modelo MobileNetV2 pre entrenado")
 
-# Configuración de la página
-st.set_page_config(
-    page_title="Reciclaje Computación en la nube",
-    layout="centered"
-)
-
-st.title(
-    "Modelo predictivo de reciclaje "
-    "IA-UTH - 2026 - Josue Ventura"
-)
-
-st.write(
-    "Sube una imagen para clasificarla con tu modelo "
-    "de reciclaje basado en MobileNetV2."
-)
-
-
-# Rutas y configuración
-IMG_SIZE = (224, 224)
-
-BASE_DIR = Path(__file__).resolve().parent
-MODEL_DIR = BASE_DIR / "modelo_reciclaje_mobilenet"
-
-CLASSES_PATH = MODEL_DIR / "class_names.json"
-MODEL_PATH_KERAS = MODEL_DIR / "waste_mobilenet.keras"
-MODEL_PATH_H5 = MODEL_DIR / "waste_mobilenet.h5"
+IMG_SIZE=(224,224)
+MODEL_DIR=Path("modelo_reciclaje_mobilenet")
+CLASS_PATH=MODEL_DIR/"class_names.json"
+MODEL_PATHS=[MODEL_DIR/"waste_mobilenet.keras", MODEL_DIR/"waste_mobilenet.h5"]
 
 LABELS_ES= {
   "cardboard": "Cartón",
