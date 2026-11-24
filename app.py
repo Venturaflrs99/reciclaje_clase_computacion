@@ -6,7 +6,9 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 
-st.set_page_config(page_title="Clasificador de reciclaje")
+st.set_page_config(page_title="Reciclaje Computacion en la nube", layout="centered")
+st.title("Modelo predictivo Reciclaje clase de IA-UTH - 2026 - Josue Ventura - 202220120030")
+st.write("Suba una imagen para clasificar con el modelo MobileNetV2 pre entrenado")
 
 MODEL_DIR = Path("modelo_reciclaje_mobilenet")
 MODEL_PATH_H5 = MODEL_DIR / "waste_mobilenet.h5"
